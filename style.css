@@ -1,0 +1,295 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('img/5_background/desert_background_img.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    font-family: 'Zabars', 'Arial', 'Helvetica', 'sans-serif';
+}
+
+@font-face {
+    font-family: 'Zabars';
+    src: url('fonts/Zabars.ttf') format('truetype');
+}
+
+h1 {
+    font-size: 64px;
+    letter-spacing: 3px;
+    text-shadow: 2px 6px 10px rgba(0, 0, 0, 0.4);
+    color: rgba(252, 75, 5, 0.9);
+}
+
+canvas {
+    background-color: black;
+    z-index: 1;
+    display: block;
+}
+
+d-none {
+    display: none !important;
+}
+
+.gameFrame {
+    position: relative;
+    width: 720px;
+    height: 480px;
+}
+
+.info-Btn {
+    height: 32px !important;
+    width: 32px !important;
+}
+
+.d-flex {
+    display: flex !important;
+    gap: 6px !important;
+}
+
+#startScreen,
+#endScreenWin,
+#endScreenLoose,
+#mobileAlert,
+#fullscreenalert,
+.infoContainer {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height: 480px;
+    width: 720px;
+    top: 0;
+    left: 0;
+}
+
+#mobileAlert,
+#fullscreenalert {
+    display: none;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: rgba(207, 200, 161, 0.8);
+    z-index: -1;
+    font-size: 32px;
+}
+
+.fullScreen {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+
+.startBtn {
+    position: absolute;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 56px;
+    letter-spacing: 1px;
+    margin-top: 32px;
+    border-radius: 16px;
+    padding: 8px 24px;
+    font-size: 3rem;
+}
+
+
+.startBtn:hover {
+    color: white;
+    border-color: white;
+}
+
+.btn {
+    background-color: #ff9d00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #381609;
+    border-color: #9a3a17;
+    border: 2px solid;
+    cursor: pointer;
+    z-index: 997;
+}
+
+.options {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.options img {
+    padding-left: 12px;
+}
+
+
+#full-screen {
+    z-index: 999;
+    height: 32px;
+    width: 32px;
+}
+
+.playButtonsMobileContainer {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 480px;
+    width: 720px;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+
+.ButtonsLeft {
+    display: flex;
+    gap: 12px;
+    margin: 6px;
+}
+
+
+.ButtonsRight {
+    display: flex;
+    gap: 12px;
+    margin: 6px;
+}
+
+.rotate90 {
+    width: 250px;
+    height: 250px;
+    -webkit-animation: spin 1s linear forwards;
+    -moz-animation: spin 1s linear forwards;
+    animation: spin 1s linear forwards;
+}
+
+.rotate{
+    animation: rotate 1.5s ease-in-out infinite alternate;
+}
+
+.message {
+    color: black;
+    font-size: 1em;
+    margin-top: 40px;
+    text-align: center;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        transform: rotate(90deg)
+    }
+
+    100% {
+        transform: rotate(90deg)
+    }
+}
+
+/*Responsive - max. Dimension Surface Pro 7*/
+@media screen and (max-width: 1368px),
+screen and (max-height: 912px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    #full-screen {
+        display: none;
+    }
+
+    .infocontainerBottom {
+        display: none;
+    }
+
+
+    .gameFrame,
+    #canvas {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+    }
+
+    .options img {
+        padding-left: 10px !important;
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .options {
+        z-index: 999;
+        cursor: pointer;
+    }
+
+    #fullscreenalert,
+    #startScreen,
+    #endScreenWin,
+    #endScreenLoose,
+    .infoContainer {
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+
+    #mobileAlert{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #mobileAlert {
+        background-color: rgba(255, 255, 255, 0.9);
+        /*z-index: 988;*/
+        z-index: -2;
+        display: flex;
+        font-size: 50px;
+    }
+
+    .playButtonsMobileContainer {
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+
+    .borderCircle {
+        border-radius: 100%;
+        padding: 6px;
+    }
+
+    .info-Btn {
+        height: 32px;
+        width: 32px;
+    }
+
+    .d-flex {
+        display: flex;
+        gap: 6px;
+    }
+}
+
+@media screen and (max-width: 280px){
+    .ButtonsRight {
+        margin: 0;
+    }
+
+    .ButtonsLeft{
+        margin: 0;
+    }
+}
+

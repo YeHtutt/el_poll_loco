@@ -207,10 +207,6 @@ screen and (max-height: 912px) {
         display: none;
     }
 
-    #full-screen {
-        display: none;
-    }
-
     .infocontainerBottom {
         display: none;
     }
